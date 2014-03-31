@@ -22,6 +22,7 @@
 		19F581CF18E9534F0049CEB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F581AE18E9534F0049CEB6 /* UIKit.framework */; };
 		19F581D718E9534F0049CEB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F581D518E9534F0049CEB6 /* InfoPlist.strings */; };
 		19F581D918E9534F0049CEB6 /* JSCBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */; };
+		19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581E618E9557E0049CEB6 /* JSCWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		19F581D418E9534F0049CEB6 /* JSCBridgeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JSCBridgeTests-Info.plist"; sourceTree = "<group>"; };
 		19F581D618E9534F0049CEB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCBridgeTests.m; sourceTree = "<group>"; };
+		19F581E518E9557E0049CEB6 /* JSCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCWebView.h; sourceTree = "<group>"; };
+		19F581E618E9557E0049CEB6 /* JSCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +117,11 @@
 		19F581B018E9534F0049CEB6 /* JSCBridge */ = {
 			isa = PBXGroup;
 			children = (
+				19F581E218E954400049CEB6 /* UI */,
 				19F581B918E9534F0049CEB6 /* JSCAppDelegate.h */,
 				19F581BA18E9534F0049CEB6 /* JSCAppDelegate.m */,
 				19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */,
 				19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */,
-				19F581C218E9534F0049CEB6 /* JSCViewController.h */,
-				19F581C318E9534F0049CEB6 /* JSCViewController.m */,
 				19F581C518E9534F0049CEB6 /* Images.xcassets */,
 				19F581B118E9534F0049CEB6 /* Supporting Files */,
 			);
@@ -153,6 +155,33 @@
 				19F581D518E9534F0049CEB6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19F581E218E954400049CEB6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				19F581E318E954490049CEB6 /* ViewControllers */,
+				19F581E418E954520049CEB6 /* WebViews */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		19F581E318E954490049CEB6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				19F581C218E9534F0049CEB6 /* JSCViewController.h */,
+				19F581C318E9534F0049CEB6 /* JSCViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		19F581E418E954520049CEB6 /* WebViews */ = {
+			isa = PBXGroup;
+			children = (
+				19F581E518E9557E0049CEB6 /* JSCWebView.h */,
+				19F581E618E9557E0049CEB6 /* JSCWebView.m */,
+			);
+			name = WebViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */,
 				19F581B718E9534F0049CEB6 /* main.m in Sources */,
 				19F581C418E9534F0049CEB6 /* JSCViewController.m in Sources */,
 				19F581BB18E9534F0049CEB6 /* JSCAppDelegate.m in Sources */,

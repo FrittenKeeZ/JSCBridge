@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JSCWebView.h"
 
-@interface JSCViewController : UIViewController
+@interface JSCViewController : UIViewController <UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet JSCWebView *webView;
 
 @end
