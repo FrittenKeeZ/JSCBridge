@@ -24,6 +24,8 @@
 		19F581D918E9534F0049CEB6 /* JSCBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */; };
 		19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581E618E9557E0049CEB6 /* JSCWebView.m */; };
 		19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */ = {isa = PBXBuildFile; fileRef = 19F581E918ED90B90049CEB6 /* testBridge.html */; };
+		F46318D118EDFD7A00C16422 /* JSCBridge.js in Sources */ = {isa = PBXBuildFile; fileRef = F46318D018EDFD7A00C16422 /* JSCBridge.js */; };
+		F46318D218EDFE7E00C16422 /* JSCBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F46318D018EDFD7A00C16422 /* JSCBridge.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		19F581E518E9557E0049CEB6 /* JSCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCWebView.h; sourceTree = "<group>"; };
 		19F581E618E9557E0049CEB6 /* JSCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCWebView.m; sourceTree = "<group>"; };
 		19F581E918ED90B90049CEB6 /* testBridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testBridge.html; sourceTree = "<group>"; };
+		F46318D018EDFD7A00C16422 /* JSCBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JSCBridge.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,7 @@
 		19F581B118E9534F0049CEB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F46318D018EDFD7A00C16422 /* JSCBridge.js */,
 				19F581E918ED90B90049CEB6 /* testBridge.html */,
 				19F581B218E9534F0049CEB6 /* JSCBridge-Info.plist */,
 				19F581B318E9534F0049CEB6 /* InfoPlist.strings */,
@@ -274,6 +278,7 @@
 			files = (
 				19F581C118E9534F0049CEB6 /* Main_iPad.storyboard in Resources */,
 				19F581C618E9534F0049CEB6 /* Images.xcassets in Resources */,
+				F46318D218EDFE7E00C16422 /* JSCBridge.js in Resources */,
 				19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */,
 				19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */,
 				19F581B518E9534F0049CEB6 /* InfoPlist.strings in Resources */,
@@ -296,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */,
+				F46318D118EDFD7A00C16422 /* JSCBridge.js in Sources */,
 				19F581B718E9534F0049CEB6 /* main.m in Sources */,
 				19F581C418E9534F0049CEB6 /* JSCViewController.m in Sources */,
 				19F581BB18E9534F0049CEB6 /* JSCAppDelegate.m in Sources */,
@@ -515,6 +521,7 @@
 				19F581DE18E9534F0049CEB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19F581DF18E9534F0049CEB6 /* Build configuration list for PBXNativeTarget "JSCBridgeTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +530,7 @@
 				19F581E118E9534F0049CEB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

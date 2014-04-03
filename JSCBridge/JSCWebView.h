@@ -15,6 +15,7 @@ typedef void (^ JSCCallbackHandler)(NSDictionary *data, JSCHandler callback);
 @interface JSCWebView : UIWebView
 
 @property (strong, nonatomic) JSContext *jsContext;
+@property (strong, nonatomic) JSValue *triggerJS;
 @property (strong, atomic) NSNumber *messageCount;
 @property (strong, nonatomic) NSMutableDictionary *listeners;
 @property (strong, nonatomic) NSMutableDictionary *callbacks;
