@@ -23,6 +23,7 @@
 		19F581D718E9534F0049CEB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F581D518E9534F0049CEB6 /* InfoPlist.strings */; };
 		19F581D918E9534F0049CEB6 /* JSCBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */; };
 		19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581E618E9557E0049CEB6 /* JSCWebView.m */; };
+		19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */ = {isa = PBXBuildFile; fileRef = 19F581E918ED90B90049CEB6 /* testBridge.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCBridgeTests.m; sourceTree = "<group>"; };
 		19F581E518E9557E0049CEB6 /* JSCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCWebView.h; sourceTree = "<group>"; };
 		19F581E618E9557E0049CEB6 /* JSCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCWebView.m; sourceTree = "<group>"; };
+		19F581E918ED90B90049CEB6 /* testBridge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testBridge.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +122,6 @@
 				19F581E218E954400049CEB6 /* UI */,
 				19F581B918E9534F0049CEB6 /* JSCAppDelegate.h */,
 				19F581BA18E9534F0049CEB6 /* JSCAppDelegate.m */,
-				19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */,
-				19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */,
 				19F581C518E9534F0049CEB6 /* Images.xcassets */,
 				19F581B118E9534F0049CEB6 /* Supporting Files */,
 			);
@@ -131,6 +131,7 @@
 		19F581B118E9534F0049CEB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19F581E918ED90B90049CEB6 /* testBridge.html */,
 				19F581B218E9534F0049CEB6 /* JSCBridge-Info.plist */,
 				19F581B318E9534F0049CEB6 /* InfoPlist.strings */,
 				19F581B618E9534F0049CEB6 /* main.m */,
@@ -160,6 +161,7 @@
 		19F581E218E954400049CEB6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				19F581E818ED90990049CEB6 /* Storyboards */,
 				19F581E318E954490049CEB6 /* ViewControllers */,
 				19F581E418E954520049CEB6 /* WebViews */,
 			);
@@ -182,6 +184,15 @@
 				19F581E618E9557E0049CEB6 /* JSCWebView.m */,
 			);
 			name = WebViews;
+			sourceTree = "<group>";
+		};
+		19F581E818ED90990049CEB6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */,
+				19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			files = (
 				19F581C118E9534F0049CEB6 /* Main_iPad.storyboard in Resources */,
 				19F581C618E9534F0049CEB6 /* Images.xcassets in Resources */,
+				19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */,
 				19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */,
 				19F581B518E9534F0049CEB6 /* InfoPlist.strings in Resources */,
 			);

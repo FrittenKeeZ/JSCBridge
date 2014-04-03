@@ -25,8 +25,13 @@
     if (_jsContext != jsContext) {
         _jsContext = jsContext;
         if (_jsContext != nil) {
-            _jsContext[@"console"][@"log"] = ^(JSValue *msg) {
-                NSLog(@"JSLog: %@", msg);
+            NSLog(@"JSContext loaded for: %@", [self request]);
+            _jsContext[@"console"][@"log"] = ^(JSValue *msg, JSValue *obj) {
+                if ([obj isUndefined]) {
+                    NSLog(@"JSLog: %@", msg);
+                } else {
+                    NSLog(@"JSLog: %@ %@", msg, obj);
+                }
             };
         }
     }

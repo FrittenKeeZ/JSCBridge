@@ -14,12 +14,15 @@
 
 @implementation JSCViewController
 
-@synthesize webView;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    webView.delegate = self;
+    _webView.delegate = self;
+    
+    NSURL* htmlURL = [[NSBundle mainBundle] URLForResource: @"testBridge"
+                                             withExtension: @"html"];
+    
+    [_webView loadRequest: [NSURLRequest requestWithURL: htmlURL]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +31,7 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self.webView refreshContext];
+    [_webView refreshContext];
 }
 
 @end
