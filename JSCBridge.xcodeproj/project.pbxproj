@@ -24,7 +24,6 @@
 		19F581D918E9534F0049CEB6 /* JSCBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581D818E9534F0049CEB6 /* JSCBridgeTests.m */; };
 		19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581E618E9557E0049CEB6 /* JSCWebView.m */; };
 		19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */ = {isa = PBXBuildFile; fileRef = 19F581E918ED90B90049CEB6 /* testBridge.html */; };
-		F46318D118EDFD7A00C16422 /* JSCBridge.js in Sources */ = {isa = PBXBuildFile; fileRef = F46318D018EDFD7A00C16422 /* JSCBridge.js */; };
 		F46318D218EDFE7E00C16422 /* JSCBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = F46318D018EDFD7A00C16422 /* JSCBridge.js */; };
 /* End PBXBuildFile section */
 
@@ -277,10 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F581C118E9534F0049CEB6 /* Main_iPad.storyboard in Resources */,
+				19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */,
 				19F581C618E9534F0049CEB6 /* Images.xcassets in Resources */,
 				F46318D218EDFE7E00C16422 /* JSCBridge.js in Resources */,
 				19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */,
-				19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */,
 				19F581B518E9534F0049CEB6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F581E718E9557E0049CEB6 /* JSCWebView.m in Sources */,
-				F46318D118EDFD7A00C16422 /* JSCBridge.js in Sources */,
 				19F581B718E9534F0049CEB6 /* main.m in Sources */,
 				19F581C418E9534F0049CEB6 /* JSCViewController.m in Sources */,
 				19F581BB18E9534F0049CEB6 /* JSCAppDelegate.m in Sources */,

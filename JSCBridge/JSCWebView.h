@@ -11,6 +11,7 @@
 
 typedef void (^ JSCHandler)(NSDictionary *data);
 typedef void (^ JSCCallbackHandler)(NSDictionary *data, JSCHandler callback);
+typedef void (^ JSCTrigger)(NSString *event, NSString *type, NSDictionary *data);
 
 @interface JSCWebView : UIWebView
 

@@ -60,7 +60,16 @@
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _messageCount = @0;
+        _listeners = [[NSMutableDictionary alloc] init];
+        _callbacks = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -105,24 +114,29 @@
                 NSLog(@"JSCBridge.triggerJS grabbed");
             }
             // Attach OS trigger to JS
-            _jsContext[@"JSCBridge"][@"triggerOS"] = ^(NSString *event, NSString *type, NSString *msgId, NSDictionary *data) {
-                
+            JSCTrigger triggerOS = ^(NSString *event, NSString *type, NSDictionary *data) {
+                [self recv:event ofType:type withPayload:data];
             };
+            _jsContext[@"JSCBridge"][@"triggerOS"] = triggerOS;
             NSLog(@"JSCBridge.triggerOS attached");
         }
     }
 }
 
 - (void)on:(NSString *)event perform:(JSCHandler)handler {
-    
+    JSCCallbackHandler callbackHandler = ^(NSDictionary *data, JSCHandler callback) {
+        handler(data);
+        callback(nil);
+    };
+    [self on:event performWithCallback:callbackHandler];
 }
 
 - (void)on:(NSString *)event performWithCallback:(JSCCallbackHandler)handler {
-    
+    [_listeners setObject:handler forKey:event];
 }
 
 - (void)off:(NSString *)event {
-    
+    [_listeners removeObjectForKey:event];
 }
 
 - (void)send:(NSString *)event {
@@ -134,7 +148,53 @@
 }
 
 - (void)send:(NSString *)event withData:(NSDictionary *)data andCallback:(JSCHandler)callback {
-    
+    if (_triggerJS != nil) {
+        NSString *msgId = [event stringByAppendingString:[_messageCount stringValue]];
+        if (callback != nil) {
+            [_callbacks setObject:callback forKey:msgId];
+        }
+        
+        NSDictionary *package = @{@"id": msgId, @"data": data, @"has_callback": @(callback != nil)};
+        [_triggerJS callWithArguments:@[event, @"message", package]];
+        
+        _messageCount = @([_messageCount integerValue] + 1);
+    } else {
+        NSLog(@"JSCBridge.triggerJS not attached!");
+    }
+}
+
+- (void)recv:(NSString *)event ofType:(NSString *)type withPayload:(NSDictionary *)payload {
+    if ([type isEqualToString:@"message"]) {
+        [self recvMessage:event withPayload:payload];
+    } else if ([type isEqualToString:@"callback"]) {
+        [self recvCallback:event withPayload:payload];
+    } else {
+        NSLog(@"JS Unknown trigger type received");
+    }
+}
+
+- (void)recvMessage:(NSString *)event withPayload:(NSDictionary *)payload {
+    JSCCallbackHandler handler = [_listeners objectForKey:event];
+    if (handler != nil) {
+        handler([payload objectForKey:@"data"], ^(NSDictionary *data) {
+            if ([[payload objectForKey:@"has_callback"] boolValue]) {
+                NSDictionary *package = @{@"id": [payload objectForKey:@"id"], @"data": data};
+                [_triggerJS callWithArguments:@[event, @"callback", package]];
+            }
+        });
+    } else {
+        NSLog(@"JS missing event handler: %@", event);
+    }
+}
+
+- (void)recvCallback:(NSString *)event withPayload:(NSDictionary *)payload {
+    JSCHandler handler = [_callbacks objectForKey:[payload objectForKey:@"id"]];
+    if (handler != nil) {
+        handler([payload objectForKey:@"data"]);
+        [_callbacks removeObjectForKey:[payload objectForKey:@"id"]];
+    } else {
+        NSLog(@"JS missing event callback: %@", event);
+    }
 }
 
 @end
