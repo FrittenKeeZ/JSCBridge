@@ -1,6 +1,7 @@
 ;(function(w,d) {
-	w.JSCBridge = new (function() {
-		var _messageCount = 0,
+	var bridge = function() {
+		var _this = this,
+			_messageCount = 0,
 			_listeners = {},
 			_callbacks = {},
 
@@ -9,11 +10,12 @@
 					var handler = _listeners[event];
 					handler(payload.data, function(data) {
 						if (payload.has_callback) {
+							data = data || {};
 							var pack = {
 								'id': payload.id,
 								'data': data
 							};
-							JSCBridge.triggerOS(event, 'callback', pack);
+							_this.triggerOS(event, 'callback', pack);
 						}
 					});
 				} else {
@@ -46,8 +48,15 @@
 				recv(event, type, data);
 			},
 
-			on = function(event, perform) {
-				_listeners[event] = perform;
+			on = function(event, handler) {
+				var callbackHandler = handler;
+				if (callbackHandler.length < 2) {
+					callbackHandler = function(data, callback) {
+						handler(data);
+						callback();
+					};
+				}
+				_listeners[event] = callbackHandler;
 			},
 
 			off = function(event) {
@@ -55,7 +64,7 @@
 			},
 
 			send = function(event, data, callback) {
-				if (JSCBridge.triggerOS instanceof Function) {
+				if (_this.triggerOS instanceof Function) {
 					if (data instanceof Function) {
 						callback = data;
 						data = undefined;
@@ -64,23 +73,36 @@
 					if (callback instanceof Function) {
 						_callbacks[msgId] = callback;
 					}
+					data = data || {};
 					pack = {
 						'id': msgId,
 						'data': data,
 						'has_callback': (callback instanceof Function)
 					};
 
-					JSCBridge.triggerOS(event, 'message', pack);
+					_this.triggerOS(event, 'message', pack);
 
 					_messageCount++;
 				} else {
 					console.log('JSCBridge.triggerOS not attached!');
 				}
+			},
+
+			isAttached = function() {
+				return _this.triggerOS instanceof Function;
 			};
 
-		this.on = on;
-		this.off = off;
-		this.send = send;
-		this.triggerJS = triggerJS;
-	})();
+		return {
+			on: on,
+			off: off,
+			send: send,
+			triggerJS: triggerJS,
+			isAttached: isAttached
+		};
+	};
+	w.JSCBridge = bridge();
 })(window,document);
+
+JSCBridge.on('attached', function() {
+	$('body').css('background-color', 'blue');
+});

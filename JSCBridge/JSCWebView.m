@@ -119,6 +119,7 @@
             };
             _jsContext[@"JSCBridge"][@"triggerOS"] = triggerOS;
             NSLog(@"JSCBridge.triggerOS attached");
+            [self send:@"attached"];
         }
     }
 }
@@ -153,6 +154,9 @@
         if (callback != nil) {
             [_callbacks setObject:callback forKey:msgId];
         }
+        if (data == nil) {
+            data = @{};
+        }
         
         NSDictionary *package = @{@"id": msgId, @"data": data, @"has_callback": @(callback != nil)};
         [_triggerJS callWithArguments:@[event, @"message", package]];
@@ -161,6 +165,10 @@
     } else {
         NSLog(@"JSCBridge.triggerJS not attached!");
     }
+}
+
+- (BOOL)isAttached {
+    return _triggerJS != nil;
 }
 
 - (void)recv:(NSString *)event ofType:(NSString *)type withPayload:(NSDictionary *)payload {
@@ -178,6 +186,9 @@
     if (handler != nil) {
         handler([payload objectForKey:@"data"], ^(NSDictionary *data) {
             if ([[payload objectForKey:@"has_callback"] boolValue]) {
+                if (data == nil) {
+                    data = @{};
+                }
                 NSDictionary *package = @{@"id": [payload objectForKey:@"id"], @"data": data};
                 [_triggerJS callWithArguments:@[event, @"callback", package]];
             }

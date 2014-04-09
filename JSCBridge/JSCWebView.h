@@ -28,5 +28,6 @@ typedef void (^ JSCTrigger)(NSString *event, NSString *type, NSDictionary *data)
 - (void)send:(NSString *)event;
 - (void)send:(NSString *)event withData:(NSDictionary *)data;
 - (void)send:(NSString *)event withData:(NSDictionary *)data andCallback:(JSCHandler)callback;
+- (BOOL)isAttached;
 
 @end
