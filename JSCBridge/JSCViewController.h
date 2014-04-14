@@ -12,5 +12,11 @@
 @interface JSCViewController : UIViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JSCWebView *webView;
+@property (weak, nonatomic) IBOutlet UILabel *lblLog;
+
+- (IBAction)sendOne:(UIButton *)sender;
+- (IBAction)sendTwo:(UIButton *)sender;
+- (IBAction)sendThree:(UIButton *)sender;
+- (IBAction)sendFour:(UIButton *)sender;
 
 @end

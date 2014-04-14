@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1986E2E118FC1D0C006E6BCD /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 1986E2DF18FC1C77006E6BCD /* test.js */; };
 		19F581AB18E9534F0049CEB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F581AA18E9534F0049CEB6 /* Foundation.framework */; };
 		19F581AD18E9534F0049CEB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F581AC18E9534F0049CEB6 /* CoreGraphics.framework */; };
 		19F581AF18E9534F0049CEB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F581AE18E9534F0049CEB6 /* UIKit.framework */; };
 		19F581B518E9534F0049CEB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F581B318E9534F0049CEB6 /* InfoPlist.strings */; };
 		19F581B718E9534F0049CEB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581B618E9534F0049CEB6 /* main.m */; };
 		19F581BB18E9534F0049CEB6 /* JSCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581BA18E9534F0049CEB6 /* JSCAppDelegate.m */; };
-		19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */; };
-		19F581C118E9534F0049CEB6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */; };
+		19F581BE18E9534F0049CEB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19F581BC18E9534F0049CEB6 /* Main.storyboard */; };
 		19F581C418E9534F0049CEB6 /* JSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F581C318E9534F0049CEB6 /* JSCViewController.m */; };
 		19F581C618E9534F0049CEB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F581C518E9534F0049CEB6 /* Images.xcassets */; };
 		19F581CD18E9534F0049CEB6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F581CC18E9534F0049CEB6 /* XCTest.framework */; };
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1986E2DF18FC1C77006E6BCD /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
 		19F581A718E9534F0049CEB6 /* JSCBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSCBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F581AA18E9534F0049CEB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F581AC18E9534F0049CEB6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +49,7 @@
 		19F581B818E9534F0049CEB6 /* JSCBridge-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JSCBridge-Prefix.pch"; sourceTree = "<group>"; };
 		19F581B918E9534F0049CEB6 /* JSCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCAppDelegate.h; sourceTree = "<group>"; };
 		19F581BA18E9534F0049CEB6 /* JSCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCAppDelegate.m; sourceTree = "<group>"; };
-		19F581BD18E9534F0049CEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		19F581C018E9534F0049CEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		19F581BD18E9534F0049CEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19F581C218E9534F0049CEB6 /* JSCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSCViewController.h; sourceTree = "<group>"; };
 		19F581C318E9534F0049CEB6 /* JSCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSCViewController.m; sourceTree = "<group>"; };
 		19F581C518E9534F0049CEB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -133,8 +133,9 @@
 		19F581B118E9534F0049CEB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F46318D018EDFD7A00C16422 /* JSCBridge.js */,
 				19F581E918ED90B90049CEB6 /* testBridge.html */,
+				F46318D018EDFD7A00C16422 /* JSCBridge.js */,
+				1986E2DF18FC1C77006E6BCD /* test.js */,
 				19F581B218E9534F0049CEB6 /* JSCBridge-Info.plist */,
 				19F581B318E9534F0049CEB6 /* InfoPlist.strings */,
 				19F581B618E9534F0049CEB6 /* main.m */,
@@ -192,8 +193,7 @@
 		19F581E818ED90990049CEB6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */,
-				19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */,
+				19F581BC18E9534F0049CEB6 /* Main.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -275,10 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F581C118E9534F0049CEB6 /* Main_iPad.storyboard in Resources */,
-				19F581BE18E9534F0049CEB6 /* Main_iPhone.storyboard in Resources */,
+				19F581BE18E9534F0049CEB6 /* Main.storyboard in Resources */,
 				19F581C618E9534F0049CEB6 /* Images.xcassets in Resources */,
 				F46318D218EDFE7E00C16422 /* JSCBridge.js in Resources */,
+				1986E2E118FC1D0C006E6BCD /* test.js in Resources */,
 				19F581EA18ED90B90049CEB6 /* testBridge.html in Resources */,
 				19F581B518E9534F0049CEB6 /* InfoPlist.strings in Resources */,
 			);
@@ -333,20 +333,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		19F581BC18E9534F0049CEB6 /* Main_iPhone.storyboard */ = {
+		19F581BC18E9534F0049CEB6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				19F581BD18E9534F0049CEB6 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		19F581BF18E9534F0049CEB6 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19F581C018E9534F0049CEB6 /* Base */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		19F581D518E9534F0049CEB6 /* InfoPlist.strings */ = {
@@ -442,6 +434,7 @@
 				INFOPLIST_FILE = "JSCBridge/JSCBridge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -456,6 +449,7 @@
 				INFOPLIST_FILE = "JSCBridge/JSCBridge-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

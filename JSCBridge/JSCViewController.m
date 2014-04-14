@@ -32,6 +32,20 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [_webView refreshContext];
+    if ([_webView isAttached]) {
+        _lblLog.text = @"JSCBridge attached!";
+    }
 }
 
+- (IBAction)sendOne:(UIButton *)sender {
+}
+
+- (IBAction)sendTwo:(UIButton *)sender {
+}
+
+- (IBAction)sendThree:(UIButton *)sender {
+}
+
+- (IBAction)sendFour:(UIButton *)sender {
+}
 @end

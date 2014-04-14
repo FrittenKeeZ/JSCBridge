@@ -102,7 +102,3 @@
 	};
 	w.JSCBridge = bridge();
 })(window,document);
-
-JSCBridge.on('attached', function() {
-	$('body').css('background-color', 'blue');
-});

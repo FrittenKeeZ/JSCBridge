@@ -2,10 +2,53 @@
 <html>
 	<head>
 		<title>Test Bridge</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script src="JSCBridge.js"></script>
+		<script src="test.js"></script>
+		<style type="text/css">
+			body {
+				padding: 20px 10px;
+				border-bottom: 1px solid black;
+			}
+			p {
+				background-color: lightgray;
+				border: 1px solid black;
+				margin: 10px 0;
+				padding: 5px;
+				text-align: center;
+			}
+			.buttons {
+				clear: both;
+				overflow: hidden;
+			}
+			button {
+				float: left;
+				height: 30px;
+				line-height: 30px;
+				margin: 0 4% 10px 0;
+				width: 48%;
+			}
+			button:nth-child(even) {
+				margin: 0;
+			}
+			input {
+				display: inline-block;
+				margin: 0;
+				padding: 5px 5%;
+				width: 90%;
+			}
+		</style>
 	</head>
 	<body>
-		<p>Test Content</p>
+		<p class="js-log"></p>
+		<div class="buttons">
+			<button class="js-send" data-number="1">Send #1</button>
+			<button class="js-send" data-number="2">Send #2</button>
+			<button class="js-send" data-number="3">Send #3</button>
+			<button class="js-send" data-number="4">Send #4</button>
+		</div>
+		<div class="input">
+			<input type="text" class="js-input" />
+		</div>
 	</body>
 </html>
