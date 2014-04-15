@@ -153,6 +153,10 @@
     [_listeners setObject:handler forKey:event];
 }
 
+- (void)off {
+    [_listeners removeAllObjects];
+}
+
 - (void)off:(NSString *)event {
     [_listeners removeObjectForKey:event];
 }

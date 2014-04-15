@@ -41,6 +41,7 @@ typedef void (^ JSCTrigger)(NSString *event, NSString *type, NSDictionary *data)
 - (void)refreshContext;
 - (void)on:(NSString *)event perform:(JSCHandler)handler;
 - (void)on:(NSString *)event performWithCallback:(JSCCallbackHandler)handler;
+- (void)off;
 - (void)off:(NSString *)event;
 - (void)send:(NSString *)event;
 - (void)send:(NSString *)event withData:(NSDictionary *)data;
