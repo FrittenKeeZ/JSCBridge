@@ -17,6 +17,9 @@
 				padding: 5px;
 				text-align: center;
 			}
+			div {
+				margin: 0 0 10px;
+			}
 			.buttons {
 				clear: both;
 				overflow: hidden;
@@ -36,19 +39,20 @@
 				margin: 0;
 				padding: 5px 5%;
 				width: 90%;
+				text-align: center;
 			}
 		</style>
 	</head>
 	<body>
 		<p class="js-log"></p>
-		<div class="buttons">
-			<button class="js-send" data-number="1">Send #1</button>
-			<button class="js-send" data-number="2">Send #2</button>
-			<button class="js-send" data-number="3">Send #3</button>
-			<button class="js-send" data-number="4">Send #4</button>
-		</div>
 		<div class="input">
-			<input type="text" class="js-input" />
+			<input type="text" class="js-input" value="This text will be uppercased by iOS" />
+		</div>
+		<div class="buttons">
+			<button class="js-send" data-event="1">Send event</button>
+			<button class="js-send" data-event="2">Send jQuery version</button>
+			<button class="js-send" data-event="3">Uppercase</button>
+			<button class="js-send" data-event="4">Get device model</button>
 		</div>
 	</body>
 </html>

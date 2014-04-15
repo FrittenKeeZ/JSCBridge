@@ -1,5 +1,5 @@
 ;(function(w,d) {
-	var bridge = function() {
+	w.JSCBridge = new (function() {
 		var _this = this,
 			_messageCount = 0,
 			_listeners = {},
@@ -7,17 +7,21 @@
 
 			recvMessage = function(event, payload) {
 				if (event in _listeners) {
-					var handler = _listeners[event];
-					handler(payload.data, function(data) {
-						if (payload.has_callback) {
-							data = data || {};
-							var pack = {
-								'id': payload.id,
-								'data': data
-							};
-							_this.triggerOS(event, 'callback', pack);
-						}
-					});
+					try {
+						var handler = _listeners[event];
+						handler(payload.data, function(data) {
+							if (payload.has_callback) {
+								data = data || {};
+								var pack = {
+									'id': payload.id,
+									'data': data
+								};
+								_this.triggerOS(event, 'callback', pack);
+							}
+						});
+					} catch (err) {
+						console.log(err);
+					}
 				} else {
 					console.log('Missing event handler:', event);
 				}
@@ -26,9 +30,13 @@
 			recvCallback = function(event, payload) {
 				var msgId = payload.id, handler;
 				if (msgId in _callbacks) {
-					handler = _callbacks[msgId];
-					handler(payload.data);
-					delete _callbacks[msgId];
+					try {
+						handler = _callbacks[msgId];
+						handler(payload.data);
+						delete _callbacks[msgId];
+					} catch (err) {
+						console.log(err);
+					}
 				} else {
 					console.log('Missing event callback:', event);
 				}
@@ -92,13 +100,11 @@
 				return _this.triggerOS instanceof Function;
 			};
 
-		return {
-			on: on,
-			off: off,
-			send: send,
-			triggerJS: triggerJS,
-			isAttached: isAttached
-		};
-	};
-	w.JSCBridge = bridge();
+		// Expose functions to public
+		this.on = on;
+		this.off = off;
+		this.send = send;
+		this.triggerJS = triggerJS;
+		this.isAttached = isAttached;
+	})();
 })(window,document);

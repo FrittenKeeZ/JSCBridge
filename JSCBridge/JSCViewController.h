@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet JSCWebView *webView;
 @property (weak, nonatomic) IBOutlet UILabel *lblLog;
+@property (weak, nonatomic) IBOutlet UITextField *txtInput;
 
 - (IBAction)sendOne:(UIButton *)sender;
 - (IBAction)sendTwo:(UIButton *)sender;
