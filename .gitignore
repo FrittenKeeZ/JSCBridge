@@ -1,0 +1,7 @@
+# Xcode
+.DS_Store
+build/
+*.xcworkspace
+!default.xcworkspace
+xcuserdata
+profile
